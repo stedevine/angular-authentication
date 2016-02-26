@@ -1,9 +1,13 @@
 <html ng-app="app">
 
 <head>
+  <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap-theme.min.css">
+
   <script src="./node_modules/angular/angular.js"></script>
   <script src="./node_modules/angular-ui-router/release/angular-ui-router.js"></script>
   <script src="./node_modules/oclazyload/dist/oclazyload.min.js"></script>
+
   <script src="./app.js"></script>
   <script src="./config.js"></script>
   <script src="./controllers/main.js"></script>
@@ -13,6 +17,13 @@
 
 
 <body>
+  <div class="container-fluid">
+      <div class="col-lg-6">
+        <div ui-view></div>
+      <div>
+  </div>
+
+  <!--
   <div ng-controller="MainController as main">
     Value {{main.mainValue}}
     Value {{main.apeValue}}
@@ -21,5 +32,6 @@
   <div ng-controller="TestController as test">
     principal: {{test.principal}}
   </div>
+-->
 </body>
 </html>

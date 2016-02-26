@@ -15,6 +15,7 @@ var principal = function ($q, $http, $timeout){
       return _identity.roles.indexOf(role) != -1;
     },
     isInAnyRole: function(roles) {
+      console.log(_identity);
       if (!_authenticated || !_identity.roles) return false;
       for (var i = 0; i < roles.length; i++) {
         if (this.isInRole(roles[i])) return true;
@@ -24,6 +25,13 @@ var principal = function ($q, $http, $timeout){
     authenticate: function(identity) {
       _identity = identity;
       _authenticated = identity != null;
+
+      // store the identity in local storage
+      if (identity) {
+        //console.log(angular.toJson(identity));
+        localStorage.setItem("demo.identity", angular.toJson(identity))
+      }
+
     },
     identity: function(force) {
       var deferred = $q.defer();
@@ -38,7 +46,9 @@ var principal = function ($q, $http, $timeout){
       // otherwise fake look up the id:
       var self = this;
       $timeout(function() {
-        self.authenticate(null);
+        //console.log(localStorage.getItem("demo.identity"));
+        _identity = angular.fromJson(localStorage.getItem("demo.identity"));
+        self.authenticate(_identity);
         deferred.resolve(_identity);
       }, 1000);
 

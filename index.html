@@ -1,6 +1,7 @@
 <html ng-app="app">
 
 <head>
+  <title>Authentication test</title>
   <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap-theme.min.css">
 
@@ -11,17 +12,13 @@
   <script src="./app.js"></script>
   <script src="./config.js"></script>
 
-  <script src="./controllers/main.js"></script>
-  <script src="./controllers/test.js"></script>
   <script src="./controllers/home.js"></script>
   <script src="./controllers/login.js"></script>
 
   <script src="./factories/principal.js"></script>
   <script src="./factories/authorization.js"></script>
 
-
 </head>
-
 
 <body>
 
@@ -30,23 +27,17 @@
   </div>
 
   <div class="container-fluid">
-    View is:
+    <div class="row">
+      <div class="col-md-2 h4"><a ui-sref="userprofile">User Profile</a></div>
+      <div class="col-md-2 h4"><a ui-sref="admin">Admin Settings</a></div>
+    </div>
     <div class="col-lg-6">
       <div ui-view="content"></div>
       <div>
       </div>
     </div>
+
   </div>
-      <!--
-  <div ng-controller="MainController as main">
-    Value {{main.mainValue}}
-    Value {{main.apeValue}}
-    Code {{main.apeToken}}
-  </div>
-  <div ng-controller="TestController as test">
-    principal: {{test.principal}}
-  </div>
--->
 </body>
 
 </html>

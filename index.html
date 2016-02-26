@@ -12,14 +12,28 @@
   <script src="./config.js"></script>
   <script src="./controllers/main.js"></script>
   <script src="./controllers/test.js"></script>
+  <script src="./controllers/home.js"></script>
+
   <script src="./factories/principal.js"></script>
+  <script src="./factories/authorization.js"></script>
 </head>
 
 
 <body>
+
+  <div ng-controller="HomeController">
+  <div ng-show="principal.isAuthenticated()">
+     I'm logged in
+  </div>
+  <div ng-hide="principal.isAuthenticated()">
+    I'm not logged in
+  </div>
+</div>
+
   <div class="container-fluid">
+    View is:
       <div class="col-lg-6">
-        <div ui-view></div>
+        <div ui-view="content"></div>
       <div>
   </div>
 

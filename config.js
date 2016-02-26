@@ -17,8 +17,8 @@ function config($ocLazyLoadProvider, $stateProvider, $urlRouterProvider) {
         }]
       },
       views: {
-        'authentication-status@': {
-          templateUrl: 'views/authentication-status.html',
+        'navigation@': {
+          templateUrl: 'views/navigation.html',
           controller: homeController
         }
       }

@@ -1,5 +1,12 @@
-function config($ocLazyLoadProvider) {
+function config($ocLazyLoadProvider, $stateProvider, $urlRouterProvider) {
   console.log('ocLazyLoad config called');
+
+  $ocLazyLoadProvider.config({
+       // Set to true if you want to see what and when is dynamically loaded
+       debug: true
+   });
+
+   
 
 }
 

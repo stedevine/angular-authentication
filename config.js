@@ -1,7 +1,7 @@
 function config($ocLazyLoadProvider, $stateProvider, $urlRouterProvider) {
   console.log('ocLazyLoad config called');
 
-  $urlRouterProvider.otherwise('/login');
+  $urlRouterProvider.otherwise('/user');
 
   $ocLazyLoadProvider.config({
     // Set to true if you want to see what and when is dynamically loaded
@@ -17,9 +17,9 @@ function config($ocLazyLoadProvider, $stateProvider, $urlRouterProvider) {
         }]
       },
       views: {
-        'content@': {
-          templateUrl: 'index.html',
-          controller: 'HomeController'
+        'authentication-status@': {
+          templateUrl: 'views/authentication-status.html',
+          controller: homeController
         }
       }
     })
@@ -29,9 +29,11 @@ function config($ocLazyLoadProvider, $stateProvider, $urlRouterProvider) {
       data: {
         roles: []
       },
+
       views: {
         'content@': {
-          templateUrl: 'views/login.html'
+          templateUrl: 'views/login.html',
+          controller: loginController,
         }
       }
     })

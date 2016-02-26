@@ -7,12 +7,19 @@
   <script src="./app.js"></script>
   <script src="./config.js"></script>
   <script src="./controllers/main.js"></script>
+  <script src="./controllers/test.js"></script>
+  <script src="./factories/principal.js"></script>
 </head>
 
 
-<body ng-controller="MainController as main">
-  Value {{main.mainValue}}
-  Value {{main.apeValue}}
-  Code {{main.apeToken}}
+<body>
+  <div ng-controller="MainController as main">
+    Value {{main.mainValue}}
+    Value {{main.apeValue}}
+    Code {{main.apeToken}}
+  </div>
+  <div ng-controller="TestController as test">
+    principal: {{test.principal}}
+  </div>
 </body>
 </html>

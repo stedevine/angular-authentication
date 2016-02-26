@@ -1,7 +1,10 @@
-<div class="alert alert-info" ng-hide="principal.isAuthenticated()">
-  <strong>Welcome</strong> Please log in.
-</div>
+<div class="row">
+  <div class="alert alert-info" ng-hide="principal.isAuthenticated()">
+    <strong>Welcome</strong> Please log in.
+  </div>
 
-<div class="alert alert-success" ng-show="principal.isAuthenticated()">
-  <strong>Hello</strong> You are logged in.
+  <div class="alert alert-success" ng-show="principal.isAuthenticated()">
+      <strong>Hello</strong> You are logged in.
+      <div class="btn btn-primary pull-right" ng-click="logOut()">Log Out</div>
+  </div>
 </div>

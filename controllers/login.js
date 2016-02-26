@@ -1,6 +1,7 @@
 function loginController($scope, $state, principal) {
   $scope.login = function() {
-    // here, we fake authenticating and give a fake user
+
+    // create an identity with a 'User' Role
     principal.authenticate({
       name: 'Test User',
       roles: ['User']

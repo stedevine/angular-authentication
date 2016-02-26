@@ -80,7 +80,7 @@ angular
   .config(config)
   .run(['$rootScope', '$state', '$stateParams', 'authorization', 'principal', function($rootScope, $state, $stateParams, authorization, principal) {
     $rootScope.$on('$stateChangeStart', function(event, toState, toStateParams) {
-      console.log("state change start!");
+      console.log(toState);
       // track the state the user wants to move to
       $rootScope.toState = toState;
       $rootScope.toStateParms = toStateParams;

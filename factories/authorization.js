@@ -4,8 +4,9 @@ var authorization = function($rootScope, $state, principal) {
     authorize: function() {
       return principal.identity().then(function() {
         var isAuthenticated = principal.isAuthenticated();
-        console.log($rootScope);
+        //console.log($rootScope);
         var roles = $rootScope.toState.data.roles;
+        //console.log('roles ' + roles);
         if (roles && roles.length > 0 && !principal.isInAnyRole(roles)) {
           if (isAuthenticated) {
             // user is signed in, but does not have access to this page

@@ -10,14 +10,14 @@ var authorization = function($rootScope, $state, principal) {
         if (roles && roles.length > 0 && !principal.isInAnyRole(roles)) {
           if (isAuthenticated) {
             // user is signed in, but does not have access to this page
-            $state.go('accessdenied');
+            $state.go('site.accessdenied');
           } else {
             // user is not authenticated - send them to the login page
             // but first store the current page
             $rootScope.returnToState = $rootScope.toState;
             $rootScope.returnToStateParams = $rootScope.toStateParams;
 
-            $state.go('login');
+            $state.go('site.login');
           }
         }
       });

@@ -6,7 +6,7 @@ function homeController($scope, $state, principal){
     console.log('log out');
     principal.authenticate(null);
     localStorage.clear();
-    $state.go('login');
+    $state.go('site.login');
   }
 }
 /*

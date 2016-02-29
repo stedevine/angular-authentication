@@ -11,7 +11,7 @@ function loginController($scope, $state, principal) {
     };
     logIn(principal, id);
     if ($scope.returnToState) $state.go($scope.returnToState.name, $scope.returnToStateParams);
-    else $state.go('admin');
+    else $state.go('site.admin');
   }
 
 
@@ -22,7 +22,7 @@ function loginController($scope, $state, principal) {
     };
     logIn(principal, id);
     if ($scope.returnToState) $state.go($scope.returnToState.name, $scope.returnToStateParams);
-    else $state.go('userprofile');
+    else $state.go('site.userprofile');
   };
 }
 

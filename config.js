@@ -23,8 +23,7 @@ function config($ocLazyLoadProvider, $stateProvider, $urlRouterProvider) {
         }
       }
     })
-    .state('login', {
-      parent: 'site',
+    .state('site.login', {
       url: "/login",
       data: {
         roles: []
@@ -37,8 +36,7 @@ function config($ocLazyLoadProvider, $stateProvider, $urlRouterProvider) {
         }
       }
     })
-    .state('accessdenied', {
-      parent: 'site',
+    .state('site.accessdenied', {
       url: "/accessdenied",
       data: {
         roles: []
@@ -49,8 +47,7 @@ function config($ocLazyLoadProvider, $stateProvider, $urlRouterProvider) {
         }
       }
     })
-    .state('admin', {
-      parent: 'site',
+    .state('site.admin', {
       url: "/admin",
       data: {
         roles: ['Admin']
@@ -61,8 +58,7 @@ function config($ocLazyLoadProvider, $stateProvider, $urlRouterProvider) {
         }
       }
     })
-    .state('userprofile', {
-      parent: 'site',
+    .state('site.userprofile', {
       url: "/userprofile",
       data: {
         roles: ['User']
@@ -86,5 +82,4 @@ angular
       $rootScope.toStateParms = toStateParams;
       if (principal.isIdentityResolved()) authorization.authorize();
     });
-    //$rootScope.$state = $state;
   }]);

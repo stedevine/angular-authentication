@@ -54,16 +54,13 @@ var principal = function ($q, $http, $timeout){
 
       return deferred.promise;
     },
-    /*
     name : function() {
-      return "test";
-    }/*
-      if (angular.isDefined(_identity)) {
+
+      if (_identity != null) {
         return _identity['name'];
       }
       return null;
     }
-    */
   };
 }
 angular

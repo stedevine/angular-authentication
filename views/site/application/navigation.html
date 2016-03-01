@@ -3,7 +3,9 @@
     <strong>Welcome</strong> Please log in.
   </div>
 
+<pre>{{userdetails | json }}</pre>
   <div class="alert alert-success" ng-show="principal.isAuthenticated()">
+
     <strong>Hello, {{principal.name()}}</strong> You are logged in.
     <div class="btn btn-primary pull-right" ng-click="logOut()">Log Out</div>
   </div>

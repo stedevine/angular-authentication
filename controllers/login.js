@@ -6,7 +6,7 @@ function loginController($scope, $state, principal) {
 
   $scope.adminLogin = function() {
     var id = {
-      name: 'Administrator',
+      id : 2,
       roles: ['User', 'Admin']
     };
     logIn(principal, id);
@@ -17,7 +17,7 @@ function loginController($scope, $state, principal) {
 
   $scope.userLogin = function() {
     var id = {
-      name: 'Test User',
+      id : 1,
       roles: ['User']
     };
     logIn(principal, id);

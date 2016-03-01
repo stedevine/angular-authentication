@@ -1,6 +1,63 @@
 <div>
   <div class="h3"> User Details </div>
   <div class="h4">
-    <b>Name</b> :  Susan Userdetail
+    <form class="form-horizontal">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6">
+
+            <div class="row">
+              <div class="form-group">
+                <label class="col-md-4 control-label">Name</label>
+                <div class="col-md-6">
+                  <div class="form-control-static">{{userDetails.name}}</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="form-group">
+                <label class="col-md-4 control-label">Email</label>
+                <div class="col-md-6">
+                  <div class="form-control-static">{{userDetails.email}}</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="form-group">
+                <label class="col-md-4 control-label">Telephone</label>
+                <div class="col-md-6">
+                  <div class="form-control-static">{{userDetails.telephone}}</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="well row">
+              Projects
+              <div ng-repeat="project in userDetails.projects">
+                <div class="row">
+                  <div class="form-group">
+                    <label class="col-md-4 control-label">Name</label>
+                    <div class="col-md-6">
+                      <div class="form-control-static">{{project.name}}</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="form-group">
+                    <label class="col-md-4 control-label">Position</label>
+                    <div class="col-md-6">
+                      <div class="form-control-static">{{project.position}}</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
   </div>
 </div>

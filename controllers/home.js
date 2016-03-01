@@ -1,4 +1,3 @@
-// Just passes the principal to the scope so the page can display whether the user is logged in.
 function homeController($scope, $state, principal) {
   console.log("home controller");
   $scope.principal = principal;
@@ -8,10 +7,16 @@ function homeController($scope, $state, principal) {
     principal.authenticate(null);
     localStorage.clear();
     $state.go('site.login');
+  };
 
-    $scope.getUserDetails = function(userId) {
+    $scope.userDetails = {};
 
+    getUserDetails = function(userId) {
       // This could be a call to the database
+      if (principal == null) {
+        return null;
+      }
+
       var allUsers = [{
         id: 1,
         name: "Susan User",
@@ -37,12 +42,12 @@ function homeController($scope, $state, principal) {
           position: "Electrical Engineer",
         }]
       }];
-      var x = allUsers.filter(function(item) {
-        return item.id == userId
-      })[0];
-      return x;
-    };
 
-    $scope.details = getUserDetails(1);
-  }
+      var userDetails = allUsers.filter(function(item) {
+        return item.id == principal.id()
+      })[0];
+      console.log(userDetails);
+      $scope.userDetails =userDetails;
+    };
+    getUserDetails();
 }

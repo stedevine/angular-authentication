@@ -54,10 +54,10 @@ var principal = function ($q, $http, $timeout){
 
       return deferred.promise;
     },
-    name : function() {
+    id : function() {
 
       if (_identity != null) {
-        return _identity['name'];
+        return _identity['id'];
       }
       return null;
     }

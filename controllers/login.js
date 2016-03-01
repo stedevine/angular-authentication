@@ -11,7 +11,7 @@ function loginController($scope, $state, principal) {
     };
     logIn(principal, id);
     if ($scope.returnToState) $state.go($scope.returnToState.name, $scope.returnToStateParams);
-    else $state.go('site.admin');
+    else $state.go('site.application.admin');
   }
 
 
@@ -22,12 +22,6 @@ function loginController($scope, $state, principal) {
     };
     logIn(principal, id);
     if ($scope.returnToState) $state.go($scope.returnToState.name, $scope.returnToStateParams);
-    else $state.go('site.userprofile');
+    else $state.go('site.application.userprofile');
   };
 }
-
-/*
-angular
-  .module('app')
-  .controller('LoginController', ['$scope', '$state', 'principal', LoginController]);
-*/

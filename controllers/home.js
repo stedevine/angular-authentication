@@ -2,6 +2,7 @@
 function homeController($scope, $state, principal){
   console.log("home controller");
   $scope.principal = principal;
+
   $scope.logOut = function() {
     console.log('log out');
     principal.authenticate(null);
@@ -9,8 +10,3 @@ function homeController($scope, $state, principal){
     $state.go('site.login');
   }
 }
-/*
-angular
-  .module('app')
-  .controller('HomeController', ['$scope', 'principal', homeController]);
-*/

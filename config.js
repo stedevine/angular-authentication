@@ -15,12 +15,6 @@ function config($ocLazyLoadProvider, $stateProvider, $urlRouterProvider) {
         authorize: ['authorization', function(authorization) {
           return authorization.authorize();
         }]
-      },
-      views: {
-        'navigation@': {
-          templateUrl: 'views/navigation.html',
-          controller: homeController
-        }
       }
     })
     .state('site.login', {
@@ -28,46 +22,47 @@ function config($ocLazyLoadProvider, $stateProvider, $urlRouterProvider) {
       data: {
         roles: []
       },
-
       views: {
-        'content@': {
-          templateUrl: 'views/login.html',
+        'site@': {
+      templateUrl: 'views/site/login.html',
           controller: loginController,
         }
       }
     })
-    .state('site.accessdenied', {
+    .state('site.application', {
+      'abstract': true,
+      resolve: {
+        authorize: ['authorization', function(authorization) {
+          return authorization.authorize();
+        }]
+      },
+      views: {
+        'site@': {
+          templateUrl: 'views/site/application_container.html',
+          controller: homeController
+        }
+      }
+    })
+    .state('site.application.accessdenied', {
       url: "/accessdenied",
       data: {
         roles: []
       },
-      views: {
-        'content@': {
-          templateUrl: 'views/accessdenied.html'
-        }
-      }
+      templateUrl: 'views/site/application/accessdenied.html',
     })
-    .state('site.admin', {
+    .state('site.application.admin', {
       url: "/admin",
       data: {
         roles: ['Admin']
       },
-      views: {
-        'content@': {
-          templateUrl: 'views/admin.html'
-        }
-      }
+      templateUrl: 'views/site/application/admin.html',
     })
-    .state('site.userprofile', {
+    .state('site.application.userprofile', {
       url: "/userprofile",
       data: {
         roles: ['User']
       },
-      views: {
-        'content@': {
-          templateUrl: 'views/userprofile.html'
-        }
-      }
+      templateUrl: 'views/site/application/userprofile.html',
     });
 }
 

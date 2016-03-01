@@ -10,7 +10,7 @@ var authorization = function($rootScope, $state, principal) {
         if (roles && roles.length > 0 && !principal.isInAnyRole(roles)) {
           if (isAuthenticated) {
             // user is signed in, but does not have access to this page
-            $state.go('site.accessdenied');
+            $state.go('site.application.accessdenied');
           } else {
             // user is not authenticated - send them to the login page
             // but first store the current page

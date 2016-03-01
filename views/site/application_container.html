@@ -1,0 +1,25 @@
+<div>
+  <div class="row">
+    <div class="alert alert-info" ng-hide="principal.isAuthenticated()">
+      <strong>Welcome</strong> Please log in.
+    </div>
+
+    <div class="alert alert-success" ng-show="principal.isAuthenticated()">
+      <strong>Hello, {{principal.name()}}</strong> You are logged in.
+      <div class="btn btn-primary pull-right" ng-click="logOut()">Log Out</div>
+    </div>
+  </div>
+  <div class="row" ng-show="principal.isAuthenticated()">
+    <div class="navbar navbar-default">
+      <ul class="nav navbar-nav h4">
+      <li ng-show="principal.isInRole('User')"><a ui-sref="site.application.userprofile">User Profile</a></li>
+      <li ng-show="principal.isInRole('Admin')"><a ui-sref="site.application.admin">Admin Settings</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="col-lg-6">
+  <div ui-view></div>
+  <div>
+  </div>
+</div>

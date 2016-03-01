@@ -51,3 +51,7 @@ function homeController($scope, $state, principal) {
     };
     getUserDetails();
 }
+
+angular
+  .module('app')
+  .controller('homeController', ['$scope', '$state', 'principal', homeController]);

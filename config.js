@@ -24,9 +24,19 @@ function config($ocLazyLoadProvider, $stateProvider, $urlRouterProvider) {
       },
       views: {
         'site@': {
-      templateUrl: 'views/site/login.html',
-          controller: loginController,
+          templateUrl: 'views/site/login.html',
+          controller: 'loginController',
         }
+      },
+      resolve: {
+        loadController: ['$ocLazyLoad', function($ocLazyLoad) {
+          return $ocLazyLoad.load({
+              name: 'app',
+              files: ['controllers/login.js']
+            }
+
+          )
+        }]
       }
     })
     .state('site.application', {
@@ -39,8 +49,16 @@ function config($ocLazyLoadProvider, $stateProvider, $urlRouterProvider) {
       views: {
         'site@': {
           templateUrl: 'views/site/application_container.html',
-          controller: homeController
+          controller: 'homeController'
         }
+      },
+      resolve: {
+        loadController: ['$ocLazyLoad', function($ocLazyLoad) {
+          return $ocLazyLoad.load({
+            name: 'app',
+            files: ['controllers/home.js']
+          })
+        }]
       }
     })
     .state('site.application.accessdenied', {

@@ -25,3 +25,7 @@ function loginController($scope, $state, principal) {
     else $state.go('site.application.userprofile');
   };
 }
+
+angular
+  .module('app')
+  .controller('loginController', ['$scope', '$state', 'principal', loginController]);
